@@ -1,50 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
 <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <title>Kinopoisk Parser</title>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        td, th {padding-left: 10px; padding-right: 10px; border: 1px solid black;}
-        td:first-child {border-left: 1px solid black}
-        td:last-child {border-right: 1px solid black}
-        td:first-child {text-align: center}
-        form {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>React Starter</title>
 </head>
+
 <body>
-<label for="date">Выберите дату выборки</label>
-<form th:action="@{/kinopoisk}">
-    <input id="date" type="date" th:name="date" th:value="${date}">
-    <button type="submit">Принять</button>
-</form>
-<table>
-    <thead>
-    <tr>
-        <th>Позиция</th>
-        <th>Рейтинг</th>
-        <th>Название</th>
-        <th>Год</th>
-        <th>Голоса</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:if="${list.size()>0}" th:each="item: ${list}">
-        <td th:text="${item.position}" />
-        <td th:text="${item.raiting}" />
-        <td th:text="${item.name}" />
-        <td th:text="${item.year}" />
-        <td th:text="${item.votes}" />
-    </tr>
-    <tr th:if="${list.size()==0}">
-        <td colspan="5">Нет записей на выбранную дату</td>
-    </tr>
-    </tbody>
-</table>
+<div id="root"></div>
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
+<!--<script src="/js/main.js"></script>-->
+<script src="http://localhost:8000/main.js"></script>
 </body>
+
 </html>

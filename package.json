@@ -1,0 +1,40 @@
+{
+  "name": "KinopoiskParser",
+  "version": "1.0.0",
+  "description": "Приложение собирает данные с рейтинга Кинопоиска (http://www.kinopoisk.ru/top/), и сохраняет позицию, рейтинг, оригинальное название, год и количество проголосовавших людей. ### Пользовательский интерфейс Для доступа к сохраненным данным предоставляется сервлет. Необходимо перейти по адресу http://localhost:8080/kinopoisk для доступа к web-интерфейсу. Отображает топ 10 фильмов.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ITSubmariner/KinopoiskParser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ITSubmariner/KinopoiskParser/issues"
+  },
+  "homepage": "https://github.com/ITSubmariner/KinopoiskParser#readme",
+  "devDependencies": {
+    "@babel/cli": "7.1.0",
+    "@babel/core": "7.1.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "1.0.0",
+    "style-loader": "0.23.0",
+    "webpack": "4.19.1",
+    "webpack-cli": "3.1.1",
+    "webpack-dev-server": "3.1.8",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "react": "16.5.2",
+    "react-dom": "16.5.2"
+  }
+}
