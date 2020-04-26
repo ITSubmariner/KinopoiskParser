@@ -1,0 +1,20 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.App{
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+thead tr th{
+    padding: 5px 10px;
+    border: 1px solid black;
+}
+

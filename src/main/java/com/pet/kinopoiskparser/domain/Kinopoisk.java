@@ -15,15 +15,15 @@ public class Kinopoisk {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private short position;
-    private float raiting;
+    private float rating;
     private String name;
     private short year;
     private int votes;
     private LocalDate date;
 
-    public Kinopoisk(short position, float raiting, String name, short year, int votes, LocalDate date) {
+    public Kinopoisk(short position, float rating, String name, short year, int votes, LocalDate date) {
         this.position = position;
-        this.raiting = raiting;
+        this.rating = rating;
         this.name = name;
         this.year = year;
         this.votes = votes;

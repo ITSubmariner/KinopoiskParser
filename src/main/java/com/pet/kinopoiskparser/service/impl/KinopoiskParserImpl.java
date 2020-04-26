@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -30,7 +31,8 @@ public class KinopoiskParserImpl implements KinopoiskParser {
     }
 
     @Override
-    @Scheduled(cron = "0 0 0 * * *")
+    @PostConstruct
+//    @Scheduled(cron = "0 0 0 * * *")
     public void parse() throws IOException {
         Document doc = Jsoup.connect(path).get();
         List<Kinopoisk> list = new ArrayList<>();
@@ -49,7 +51,7 @@ public class KinopoiskParserImpl implements KinopoiskParser {
         kinopoisk.setPosition(Short.parseShort(links.first().attr("name")));
         kinopoisk.setName(nameAndYear.substring(0, nameAndYear.indexOf("(")-1));
         kinopoisk.setYear(Short.parseShort(nameAndYear.substring(nameAndYear.indexOf("(")+1, nameAndYear.indexOf(")"))));
-        kinopoisk.setRaiting(Float.parseFloat(links.get(2).html()));
+        kinopoisk.setRating(Float.parseFloat(links.get(2).html()));
         kinopoisk.setVotes(Integer.parseInt(span.html().substring(1, span.html().length()-1).replace("&nbsp;", "")));
         kinopoisk.setDate(LocalDate.now());
         return kinopoisk;
